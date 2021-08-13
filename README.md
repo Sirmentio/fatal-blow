@@ -5,6 +5,8 @@
 # Fatal Blow
 (aka "mobsplosion")
 
+[![Get it on Modrinth!](https://img.shields.io/static/v1?label=&message=Get+it+on+Modrinth!&color=2ea44f&style=for-the-badge)](https://modrinth.com/mod/fatal-blow)
+
 A simple mixin mod that causes mobs to explode on
 death, with a power defined by their maximum health.
 
