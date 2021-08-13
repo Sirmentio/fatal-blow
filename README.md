@@ -12,8 +12,8 @@ Fatal Blow was built on the Fabric modloader!
 
 </div>
 
-# Forge?
-🐸?
-
 # Contributions
 Contributions are welcome! I may not be able to look around at pull requests all the time, this is just a small little project I did to play with mixins, after all, but improvements would be appreciated.
+
+# Forge?
+🐸?
