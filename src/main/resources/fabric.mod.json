@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "mobsplosion",
+  "version": "1.0",
+  "name": "Fatal Blow",
+  "description": "Puts the blow in fatal blow :concern:",
+  "authors": [
+    "HunnyBon"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/mobsplosion/icon.png",
+  "environment": "*",
+  "mixins": [
+    "mobsplosion.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "minecraft": "1.17.1"
+  }
+}
