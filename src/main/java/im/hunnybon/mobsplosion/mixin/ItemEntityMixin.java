@@ -1,5 +1,6 @@
 package im.hunnybon.mobsplosion.mixin;
 
+import im.hunnybon.mobsplosion.Mobsplosion;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -36,8 +37,7 @@ abstract class ItemEntityMixin extends Entity {
     public void tick(CallbackInfo ci){
         if (!this.world.isClient && this.itemAge >= 6000) {
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getStack().getCount() / 2.0f,
-                    Explosion.DestructionType.BREAK);
+                    this.getStack().getCount() / 2.0f, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
             this.discard();
         }
     }
