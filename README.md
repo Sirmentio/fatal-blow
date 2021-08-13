@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="Example Icon" src="src/main/resources/assets/modid/icon.png" width="128">
+<img alt="Example Icon" src="src/main/resources/assets/mobsplosion/icon.png" width="128">
 
 # Fatal Blow
 (aka "mobsplosion")
