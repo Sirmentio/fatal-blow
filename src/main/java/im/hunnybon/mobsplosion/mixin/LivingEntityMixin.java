@@ -1,6 +1,7 @@
 package im.hunnybon.mobsplosion.mixin;
 
 
+import im.hunnybon.mobsplosion.Mobsplosion;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -29,7 +30,7 @@ abstract class LivingEntityMixin extends Entity {
     public void onDeath(DamageSource source, CallbackInfo ci){
         if (this.getMaxHealth() > 2.0f & this.world instanceof ServerWorld){
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getMaxHealth() / 7.0f, Explosion.DestructionType.BREAK);
+                    this.getMaxHealth() / 7.0f, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
         }
     }
 }

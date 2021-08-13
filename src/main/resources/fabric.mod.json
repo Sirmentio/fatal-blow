@@ -7,10 +7,18 @@
   "authors": [
     "HunnyBon"
   ],
+  "contributors": [
+    "FarlanderCraft"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/mobsplosion/icon.png",
   "environment": "*",
+  "entrypoints": {
+    "main": [
+      "im.hunnybon.mobsplosion.Mobsplosion"
+    ]
+  },
   "mixins": [
     "mobsplosion.mixins.json"
   ],
