@@ -30,7 +30,7 @@ abstract class LivingEntityMixin extends Entity {
     public void onDeath(DamageSource source, CallbackInfo ci){
         if (this.getMaxHealth() > 2.0f & this.world instanceof ServerWorld){
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getMaxHealth() / 7.0f, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
+                    this.getMaxHealth() / Mobsplosion.config.explosionDivisor, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
         }
     }
 }

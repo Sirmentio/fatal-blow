@@ -37,7 +37,7 @@ abstract class ItemEntityMixin extends Entity {
     public void tick(CallbackInfo ci){
         if (!this.world.isClient && this.itemAge >= 6000) {
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getStack().getCount() / 2.0f, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
+                    this.getStack().getCount() / Mobsplosion.config.itemExplosionDivisor, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
             this.discard();
         }
     }

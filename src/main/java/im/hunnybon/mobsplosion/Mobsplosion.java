@@ -12,16 +12,16 @@ import java.nio.file.Paths;
 import java.util.Collections;
 
 public class Mobsplosion implements ModInitializer {
-    public static MobsplosionConfig config = new MobsplosionConfig(true, true);
-    public Gson daData = new GsonBuilder().setPrettyPrinting().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+    public static MobsplosionConfig config = new MobsplosionConfig(true, true, 7.0f, 2.0f);
+    public Gson configData = new GsonBuilder().setPrettyPrinting().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
     Path configPath = Paths.get("config/mobsplosion.json");
 
-    public void saveDaData() {
+    public void saveData() {
         try{
             if (configPath.toFile().exists()) {
-                config = daData.fromJson(new String(Files.readAllBytes(configPath)), MobsplosionConfig.class);
+                config = configData.fromJson(new String(Files.readAllBytes(configPath)), MobsplosionConfig.class);
             } else {
-                Files.write(configPath, Collections.singleton(daData.toJson(config)));
+                Files.write(configPath, Collections.singleton(configData.toJson(config)));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,7 +30,7 @@ public class Mobsplosion implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        saveDaData();
+        saveData();
         System.out.println("Boom");
     }
 }
