@@ -1,0 +1,11 @@
+{
+  "title.mobsplosion.config" : "Mobsplosion Configuration",
+  "option.mobsplosion.destroyBlocks" : "Destroy Blocks",
+  "option.mobsplosion.destroyBlocks.desc" : "Do explosions destroy blocks?",
+  "option.mobsplosion.createsFire" : "Create Fire",
+  "option.mobsplosion.createsFire.desc" : "Do explosions create fire?",
+  "option.mobsplosion.explosionDivisor" : "Explosion Divisor",
+  "option.mobsplosion.explosionDivisor.desc" : "How much is mob max health divided by when calculating explosions?",
+  "option.mobsplosion.itemExplosionDivisor" : "Item Explosion Divisor",
+  "option.mobsplosion.itemExplosionDivisor.desc" : "How much should the item stack count be divided by when drops despawn?"
+}

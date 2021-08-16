@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "im.hunnybon.mobsplosion.Mobsplosion"
+    ],
+    "modmenu": [
+      "im.hunnybon.mobsplosion.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -25,5 +28,8 @@
   "depends": {
     "fabricloader": ">=0.11.6",
     "minecraft": "1.17.1"
+  },
+  "suggests": {
+    "modmenu": "*"
   }
 }

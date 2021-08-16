@@ -2,6 +2,7 @@ package im.hunnybon.mobsplosion.mixin;
 
 
 import im.hunnybon.mobsplosion.Mobsplosion;
+import im.hunnybon.mobsplosion.MobsplosionConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +15,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import im.hunnybon.mobsplosion.MobsplosionConfig.*;
+
+import static im.hunnybon.mobsplosion.Mobsplosion.config;
 
 @Mixin(LivingEntity.class)
 abstract class LivingEntityMixin extends Entity {
@@ -30,7 +34,7 @@ abstract class LivingEntityMixin extends Entity {
     public void onDeath(DamageSource source, CallbackInfo ci){
         if (this.getMaxHealth() > 2.0f & this.world instanceof ServerWorld){
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getMaxHealth() / Mobsplosion.config.explosionDivisor, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
+                    this.getMaxHealth() / config.explosionDivisor, config.createsFire, config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
         }
     }
 }

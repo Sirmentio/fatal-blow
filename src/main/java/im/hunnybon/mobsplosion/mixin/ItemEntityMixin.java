@@ -1,6 +1,5 @@
 package im.hunnybon.mobsplosion.mixin;
 
-import im.hunnybon.mobsplosion.Mobsplosion;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -14,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import static im.hunnybon.mobsplosion.Mobsplosion.config;
 
 @Mixin(ItemEntity.class)
 abstract class ItemEntityMixin extends Entity {
@@ -37,7 +38,7 @@ abstract class ItemEntityMixin extends Entity {
     public void tick(CallbackInfo ci){
         if (!this.world.isClient && this.itemAge >= 6000) {
             this.world.createExplosion(this, this.getX(), this.getBodyY(0.0625D), this.getZ(),
-                    this.getStack().getCount() / Mobsplosion.config.itemExplosionDivisor, Mobsplosion.config.createsFire, Mobsplosion.config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
+                    this.getStack().getCount() / config.itemExplosionDivisor, config.createsFire, config.destroyBlocks ? Explosion.DestructionType.BREAK : Explosion.DestructionType.NONE);
             this.discard();
         }
     }
