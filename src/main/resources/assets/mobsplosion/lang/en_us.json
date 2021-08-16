@@ -1,5 +1,5 @@
 {
-  "title.mobsplosion.config" : "Mobsplosion Configuration",
+  "title.mobsplosion.config" : "Fatal Blow Configuration",
   "option.mobsplosion.destroyBlocks" : "Destroy Blocks",
   "option.mobsplosion.destroyBlocks.desc" : "Do explosions destroy blocks?",
   "option.mobsplosion.createsFire" : "Create Fire",
